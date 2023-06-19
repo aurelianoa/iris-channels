@@ -1,0 +1,24 @@
+{
+  "name": "@aurelianoa/iris-channels",
+  "version": "1.0.0",
+  "description": "Package to setup a channel fo your smart contracts",
+  "repository": "https://github.com/aurelianoa/iris-channels.git",
+  "author": "@aurealarcon aurelianoa.eth",
+  "license": "MIT",
+  "files": [
+    "/contracts/**/*.sol"
+  ],
+  "private": false,
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/aurelianoa/iris-channels/issues"
+  },
+  "homepage": "https://github.com/aurelianoa/iris-channels#readme",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "Solidity",
+    "Metadata"
+  ]
+}
