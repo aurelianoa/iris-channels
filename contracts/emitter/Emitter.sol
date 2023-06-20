@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 import { IEmitter } from "./IEmitter.sol";
 import { IChannel } from "../channel/IChannel.sol";
