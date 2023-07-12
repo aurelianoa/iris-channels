@@ -3,9 +3,10 @@ pragma solidity ^0.8.17;
 
 interface INetwork {
     function broadcast(string memory eventIndex, bytes memory data) external;
-    function setChannel(address emitter, address[] memory listeners) external;
-    function setChannelStatus(address emitter, bool active) external;
-    function setChannelLazyStatus(address emitter, bool lazy) external;
-    function setListener(address emitter, address listener) external;
-    function removeChannelListener(address emitter, address listener) external;
+    function setChannel(address channel, address[] memory listeners) external;
+    function setChannelStatus(address channel, bool active) external;
+    function setChannelLazyStatus(address channel, bool lazy) external;
+    function addChannelListener(address channel, address listener) external;
+    function addChannelListeners(address channel, address[] memory listeners) external;
+    function removeChannelListener(address channel, address listener) external;
 }

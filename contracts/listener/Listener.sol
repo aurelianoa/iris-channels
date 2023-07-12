@@ -11,13 +11,13 @@ abstract contract Listener is IListener {
     
     mapping(address => Message) internal lastMessages;
 
-    function listen(address sender, string memory eventIndex, bytes memory data) virtual public {
+    function listen(address channel, string memory eventIndex, bytes memory data) virtual public {
         Message memory _message = Message(eventIndex, data);
-        lastMessages[sender] = _message;
-        onReceivedMessage(sender, eventIndex);
+        lastMessages[channel] = _message;
+        onReceivedMessage(channel, eventIndex);
     }
 
-    function onReceivedMessage(address sender, string memory eventIndex) virtual internal {}
+    function onReceivedMessage(address channel, string memory eventIndex) virtual internal {}
     
     function compareIndex(string memory a, string memory b) public pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
