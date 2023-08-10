@@ -8,11 +8,11 @@ interface INetwork {
     /// broadcast message to listeners
     /// @param eventIndex string
     /// @param data bytes
-    function broadcast(string calldata eventIndex, bytes calldata data) external;
+    function broadcast(string memory eventIndex, bytes memory data) external;
     /// Set channel and listeners
     /// @param channel address
     /// @param listeners address[]
-    function setChannel(address channel, address[] calldata listeners) external;
+    function setChannel(address channel, address[] memory listeners) external;
     /// Set channel status
     /// @param channel address
     /// @param active bool
@@ -28,7 +28,7 @@ interface INetwork {
     /// Add channel listeners
     /// @param channel address
     /// @param listeners address[]
-    function addChannelListeners(address channel, address[] calldata listeners) external;
+    function addChannelListeners(address channel, address[] memory listeners) external;
     /// Remove channel listener
     /// @param channel address
     /// @param listener address

@@ -10,7 +10,7 @@ import { INetwork } from "../network/INetwork.sol";
 abstract contract Channel is IChannel {
 
     /// @inheritdoc IChannel
-    function broadcast(address _network, string calldata eventIndex, bytes calldata data) public {
+    function broadcast(address _network, string memory eventIndex, bytes memory data) public {
         if(_network == address(0)) revert NotSupportedNetwork();
         INetwork network = INetwork(_network);
         network.broadcast(eventIndex, data);

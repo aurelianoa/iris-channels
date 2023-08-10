@@ -13,7 +13,7 @@ abstract contract Listener is IListener {
     mapping(address => Message) internal lastMessages;
 
     /// @inheritdoc IListener
-    function listen(address channel, string calldata eventIndex, bytes calldata data) virtual public {
+    function listen(address channel, string memory eventIndex, bytes memory data) virtual public {
         Message memory _message = Message(eventIndex, data);
         lastMessages[channel] = _message;
         onReceivedMessage(channel, eventIndex, data);
@@ -22,13 +22,13 @@ abstract contract Listener is IListener {
     /// virtual function to be overriden by the child contract
     /// @param channel address
     /// @param eventIndex string
-    function onReceivedMessage(address channel, string calldata eventIndex, bytes calldata data) virtual internal {}
+    function onReceivedMessage(address channel, string memory eventIndex, bytes memory data) virtual internal {}
     
     /// compare two strings
     /// @param a string
     /// @param b string
     /// @return bool
-    function compareIndex(string calldata a, string calldata b) public pure returns (bool) {
+    function compareIndex(string memory a, string memory b) public pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
     }
 

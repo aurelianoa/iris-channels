@@ -11,7 +11,7 @@ interface IChannel {
     /// @param _network address
     /// @param eventIndex string
     /// @param data bytes
-    function broadcast(address _network, string calldata eventIndex, bytes calldata data) external;
+    function broadcast(address _network, string memory eventIndex, bytes memory data) external;
     /// supports IChannel interface
     /// @param interfaceId bytes4
     /// @return bool

@@ -14,7 +14,7 @@ interface IListener {
     /// @param channel address
     /// @param eventIndex string
     /// @param data bytes
-    function listen(address channel, string calldata eventIndex, bytes calldata data) external;
+    function listen(address channel, string memory eventIndex, bytes memory data) external;
     /// supports IListener interface
     /// @param interfaceId bytes4
     /// @return bool
