@@ -1,6 +1,6 @@
 {
   "name": "@aurelianoa/iris-channels",
-  "version": "1.1.0-beta.1",
+  "version": "1.1.0-beta.2",
   "description": "Package to setup a channel fo your smart contracts",
   "repository": "https://github.com/aurelianoa/iris-channels.git",
   "author": "@aurealarcon aurelianoa.eth",
