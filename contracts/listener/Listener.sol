@@ -16,6 +16,17 @@ abstract contract Listener is IListener {
     /// @dev channel => bool
     mapping(address => bool) internal channels;
 
+    /// middleware to be overriden
+    /// @notice this will be called by all the administrative functions
+    /// @dev this will be overriden by the child contract
+    function middleware() internal virtual returns (bool) {}
+
+    /// Modifier to be applied in some adminnistrative functions
+    modifier onlyPermisioned() {
+        require(middleware(), "Not permisioned");
+        _;
+    }
+
     /// @inheritdoc IListener
     function listen(address channel, string memory eventIndex, bytes memory data) virtual public {
         Message memory _message = Message(eventIndex, data);
@@ -44,7 +55,7 @@ abstract contract Listener is IListener {
     /// set available channel
     /// @param channel address
     /// @param active bool
-    function setChannel(address channel, bool active) public virtual {
+    function setChannel(address channel, bool active) public virtual onlyPermisioned {
         channels[channel] = active;
     }
 
